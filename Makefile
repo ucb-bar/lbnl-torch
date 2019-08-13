@@ -4,10 +4,10 @@ SUBDIRS = denseLinearAlgebra/C sparseLinearAlgebra/C spectralMethods/C structure
 
 subdirs: $(SUBDIRS)
 
-.PHONY: all clean subdirs
+.PHONY: all clean $(SUBDIRS)
 
 $(SUBDIRS): Makefile
-	@for d in $(SUBDIRS); do (cd $$d; $(MAKE);); done
+	$(MAKE) -C $@
 
 all: subdirs
 

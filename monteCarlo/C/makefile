@@ -8,10 +8,10 @@ include ../../Makefile.in
 
 
 monteCarloIntegrate: monteCarloIntegrate.o
-	$(CC) monteCarloIntegrate.o $(CFLAGS) $(CLIBS) -o monteCarloIntegrate
+	$(CC) monteCarloIntegrate.o $(CFLAGS) $(CLIBS) -o monteCarloIntegrate $(LDFLAGS)
 
 monteCarloIntegrate.o:
 	$(CC) $(CFLAGS) monteCarloIntegrate.c -c
 
 clean:
-	rm *.o monteCarloIntegrate
+	rm -f *.o monteCarloIntegrate

@@ -8,22 +8,22 @@ include ../Makefile.in
 
 
 charArraySort: charArraySort.o
-	$(CC) $(CFLAGS) $(CLIBS) charArraySort.o -o charArraySort
+	$(CC) $(CFLAGS) $(CLIBS) charArraySort.o -o charArraySort $(LDFLAGS)
 
 charArraySort.o:
 	$(CC) $(CFLAGS) charArraySort.c -c
-	
+
 integerSort: integerSort.o
-	$(CC) $(CFLAGS) $(CLIBS) integerSort.o -o integerSort
+	$(CC) $(CFLAGS) $(CLIBS) integerSort.o -o integerSort $(LDFLAGS)
 
 integerSort.o:
 	$(CC) $(CFLAGS) integerSort.c -c
-	
+
 spatialSort: spatialSort.o
-	$(CC) $(CFLAGS) $(CLIBS) spatialSort.o -o spatialSort
+	$(CC) $(CFLAGS) $(CLIBS) spatialSort.o -o spatialSort $(LDFLAGS)
 
 spatialSort.o:
 	$(CC) $(CFLAGS) spatialSort.c -c
 
 clean:
-	rm *.o charArraySort integerSort spatialSort
+	rm -f *.o charArraySort integerSort spatialSort

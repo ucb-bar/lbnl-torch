@@ -1,5 +1,6 @@
 
 MAKE = make
 CC = gcc
-CFLAGS = -g -Wall -O2 -std=c99 -lm
+CFLAGS = -g -Wall -O2 -std=c99
+LDFLAGS = -lm
 CLIBS =

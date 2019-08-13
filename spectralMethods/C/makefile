@@ -7,7 +7,7 @@ include ../../Makefile.in
 
 
 spectralMain: spectralMain.o ffts.o complexUtil.o
-	$(CC) $(CFLAGS) $(CLIBS) spectralMain.o ffts.o complexUtil.o -o spectralMain
+	$(CC) $(CFLAGS) $(CLIBS) spectralMain.o ffts.o complexUtil.o -o spectralMain $(LDFLAGS)
 
 spectralMain.o: ffts.o complexUtil.o
 	$(CC) $(CFLAGS) -c spectralMain.c
@@ -20,4 +20,4 @@ complexUtil.o: complexUtil.h complexUtil.c
 
 
 clean:
-	rm *.o spectralMain
+	rm -f *.o spectralMain

@@ -6,19 +6,19 @@ all: sparseMain
 include ../../Makefile.in
 
 sparseMain: sparseMain.o generators.o sparseArithmetic.o sparseUtil.o
-	$(CC) $(CFLAGS) $(CLIBS) sparseMain.o generators.o sparseArithmetic.o sparseUtil.o -o sparseMain
+	$(CC) $(CFLAGS) $(CLIBS) sparseMain.o generators.o sparseArithmetic.o sparseUtil.o -o sparseMain $(LDFLAGS)
 
-sparseMain.o: 
+sparseMain.o:
 	$(CC) $(CFLAGS) -c sparseMain.c
 
-generators.o: 
+generators.o:
 	$(CC) $(CFLAGS) -c generators.c
 
-sparseArithmetic.o: 
+sparseArithmetic.o:
 	$(CC) $(CFLAGS) -c sparseArithmetic.c
-	
-sparseUtil.o: 
+
+sparseUtil.o:
 	$(CC) $(CFLAGS) -c sparseUtil.c
 
 clean:
-	rm *.o sparseMain
+	rm -f *.o sparseMain

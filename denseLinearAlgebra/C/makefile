@@ -11,21 +11,19 @@ LOCALOBJS = denseMain.o denseArithmetic.o denseUtil.o generators.o
 
 
 denseMain: $(LOCALOBJS)
-	$(CC) $(LOCALOBJS) $(CFLAGS) $(CLIBS) -o denseMain
+	$(CC) $(LOCALOBJS) $(CFLAGS) $(CLIBS) -o denseMain $(LDFLAGS)
 
 denseMain.o:
 	$(CC) $(CFLAGS) -c denseMain.c
-	
+
 denseArithmetic.o:
 	$(CC) $(CFLAGS) -c denseArithmetic.c
 
-denseUtil.o: 
+denseUtil.o:
 	$(CC) $(CFLAGS) -c denseUtil.c
 
-generators.o: 
+generators.o:
 	$(CC) $(CFLAGS) -c generators.c
 
 clean:
-	rm *.o denseMain
-
-
+	rm -f *.o denseMain
