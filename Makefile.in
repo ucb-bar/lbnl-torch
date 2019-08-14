@@ -1,6 +1,10 @@
+ifeq ($(TARGET), riscv)
+  CC = riscv64-unknown-elf-gcc
+else
+  CC = gcc
+endif
 
 MAKE = make
-CC = gcc
 CFLAGS = -g -Wall -O2 -std=c99
 LDFLAGS = -lm
 CLIBS =
